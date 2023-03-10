@@ -2,13 +2,14 @@
 //
 const int TrigPin=9;
 const int EchoPin=10;
-const int ledPin=8;
+const int buzzPin=8;
 long dur;
 int dist;
 void setup()
 {
   pinMode(TrigPin, OUTPUT);
   pinMode(EchoPin, INPUT);
+  pinMode(buzzPin, OUTPUT);
   Serial.begin(9600);
 }
 
@@ -24,8 +25,8 @@ void loop()
   Serial.print(dist);
   Serial.println("cm");
   if(dist>65)
-    digitalWrite(ledPin,HIGH);
+    digitalWrite(buzzPin,HIGH);
 
   else
-    digitalWrite(ledPin,LOW);
+    digitalWrite(buzzPin,LOW);
 }
